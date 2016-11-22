@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-configuration PUBLIC
-		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-    <session-factory>
-        <property name="hibernate.connection.driver_class">org.gjt.mm.mysql.Driver</property>
-        <property name="hibernate.connection.password">hadouken!1320</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost/testes</property>
-        <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-    </session-factory>
+ <session-factory >
+  <property name="hibernate.connection.driver_class">org.gjt.mm.mysql.Driver</property>
+  <property name="hibernate.connection.password">hadouken!1320</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost/teste2</property>
+  <property name="hibernate.connection.username">root</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+  <property name="hibernate.hbm2ddl.auto">update</property>
+  <mapping class="com.testes.cliente.Cliente"/>
+  <mapping class="com.testes.farmacia.Farmacia"/>
+  <mapping class="com.testes.produto.Produto"/>
+  <mapping class="com.testes.pedido.Pedido"/>
+  <mapping class="com.testes.produto_pedido.Produto_pedido"/>
+ </session-factory>
 </hibernate-configuration>

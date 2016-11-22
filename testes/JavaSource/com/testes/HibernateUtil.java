@@ -3,30 +3,34 @@ package com.testes;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class HibernateUtil {
 
+
+public class HibernateUtil {
+	
 	private static final SessionFactory session = buildSessionFactory();
 
-	@SuppressWarnings("deprecation")
+	public static SessionFactory getSession() {
+		return session;
+	}
+
 	private static SessionFactory buildSessionFactory() {
 		try{
-			
 			Configuration cfg = new Configuration();
 			cfg.configure("hibernate.cfg.xml");
-			return cfg.buildSessionFactory();
+			return cfg.configure().buildSessionFactory();
+		}catch (Throwable e){
 			
+			System.out.println("deu ruim");
 			
-		} catch (Throwable e){
-			System.out.println("bosta\n" + e);
 			throw new ExceptionInInitializerError();
+			
 		}
 		
 	}
 	
-		
-		public static SessionFactory getSession() {
-		return session;
-	}
+	
+	
+	
+	
 }
-
 

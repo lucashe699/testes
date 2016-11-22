@@ -15,7 +15,7 @@ public class Conecta {
 		}finally{
 			
 			sessao.close();
-			System.out.println("aeww foooi");
+			System.out.println("É TETRA FECHÔ");
 		}
 		
 	}
